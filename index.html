@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coderush_project</title>
+    </head>
+
+    <body>
+        <header>
+        <nav>
+            <h1> HTML & CSS Project</h1>
+            <ul>
+                <li><a href="#canvas">Gallery</a></li>
+                <li><a href="#form">Form</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#facts">Facts</a></li></li>
+            </ul>
+        </nav>
+        </header>
+        <!--canvas-->
+        <section class="canvas" id="canvas">
+            <h1>Gallery</h1>
+            <canvas id="myCanvas"> </canvas>
+        </section>
+          <script>
+            var slider = document.getElementById("myCanvas");
+            var ctx = slider.getContext("2d");
+            var images = ["image/img1.jpg", "image/img2.jpg", "image/img3.jpg"];
+            var currentImage = 0;
+
+            function drawImage() 
+            {
+            var img = new Image();
+            img.src = images[currentImage];
+            img.onload = function () {
+                ctx.drawImage(img, 0, 0, slider.width, slider.height);
+            };
+            }
+
+            drawImage();
+            setInterval(function () {
+            currentImage++;
+            if (currentImage >= images.length) {
+                currentImage = 0;
+            }
+            drawImage();
+            }, 5000);
+          </script>
+
+          <!--form-->
+        <section  class="form" id="form">
+        <h1>Registration Form</h1>
+        <form  lang="ar" method="post" id="myForm">
+        <p>Please fill out this form with the required information in arabic</p>
+        <fieldset>
+            <label for="first-name">First Name: <input id="first-name" name="first-name" type="text" pattern="[\u0600-\u06FF]" required /></label>
+            <label for="last-name">Last Name: <input id="last-name" name="last-name" type="text" pattern="[\u0600-\u06FF]" required /></label>
+            <br/>
+            <p>Choose your Gender</p>
+            <label for="male"><input id="male" type="radio" name="gender" class="inline" /> Male</label>
+            <label for="female"><input id="female" type="radio" name="gender" class="inline" /> Female</label>
+            <br/>
+            
+            <label for="bio">Provide a bio:
+                <textarea id="bio" name="bio" rows="3" cols="30" class="inline" pattern="[\u0600-\u06FF]" placeholder="طالب هندسة"></textarea>
+              </label>
+        <input type="submit" value="Submit" />
+      </fieldset>
+        </form>
+        </section>
+
+        <!--News-->
+      <section class="news" id="news">
+        <section class="heading">
+            <div class="hero">  
+            <div>
+              <h1 class="hero-title">PSG VS RIYADH ALLSTAR</h1>
+              <p class="hero-subtitle">
+                Messi and Ronaldo both scores as PSG beat Riyadh All-Stars
+              </p>
+            </div> 
+          <div><img
+            src="https://img.allfootballapp.com/www/M00/3B/69/460x-/-/-/CgAGVmPJl3CAf4-CAAE2giPK--s070.jpg.webp"
+            alt="cr7 with lm10"
+            loading="lazy"
+            class="hero-img"
+          />
+        </div>
+        </div>
+            <div class="author">
+              <p class="author-name">
+                By
+                Shivaji Pandit Chhetri 
+              </p>
+              <p class="publish-date">january 20, 2023</p>
+            </div>
+            </section>
+          <section class="text">
+            <p class="first-paragraph">
+                Cristiano Ronaldo and Lionel Messi both scored as Paris Saint-Germain beat the Riyadh Season Team 5-4 at the King Fahd International Stadium on Thursday.
+                Ronaldo scored twice in his first game since signing for Saudi Pro League side Al Nassr following his departure from Manchester United.
+            </p>
+            <p>
+                Messi, back with PSG after winning the World Cup with Argentina, got the first goal of the game before Ronaldo equalised for the Saudi select team -- made up of players from Al Nassr and Riyadh rivals Al Hilal -- with a well-struck penalty.
+                During a frantic end to the first half, PSG defender Juan Bernat was sent off, Marquinhos put the French champions 2-1 up, Neymar missed a penalty and Ronaldo scored his second of the evening after his header had rebounded off the post.
+            </p>
+            <p>
+                Both Ronaldo and Messi were substituted after 60 minutes but they were still on the pitch long enough to see Ramos put PSG 3-2 up, Saudi select defender Jang Hyun-Soo equalise and Kylian Mbappe score a penalty to make it 4-3.
+                Substitute Hugo Ekitike scored again for PSG and Anderson Talisca got a late consolation as the game finished 5-4.
+                With Ronaldo having left European club football for Saudi, it's possibly the last time he will share a pitch with longtime rival Messi.
+            </p>
+           
+            <p>
+                After PSG's trip to the Middle East, they are back in action against Pays de Cassel in the French Cup on Monday.
+                 Ronaldo, meanwhile, is set to feature for Al Nassr for the first time on Sunday after his debut was delayed due to a two-match suspension handed down by the English FA for an incident during his spell at Old Trafford.
+            </p>
+          </section>
+        </section>
+        
+
+          <!--facts-->
+          <section class ="list_grid" id="facts">
+            <h1>Some Facts</h1>
+            <div class="list" >
+              <div >
+                It is impossible for most people to lick their own elbow.
+              </div>
+              <div >
+                A shrim heart is in their head.
+              </div>
+              <div >
+                It is physically impossible for pigs to look up into the sky
+              </div>
+              <div >
+                A man is not dead until he dies.
+              </div>
+            </div>
+
+          </section>
+        
+    </body>
+</html>
